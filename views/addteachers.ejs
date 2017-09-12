@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <%-include partials/head.ejs%>
+<body>
+  <h1>Halaman Tambah Teachers</h1>
+
+<table border = '2px'>
+<form action="/teachers/add" method="POST">
+  <label>First_name : <input type="text" name="first_name" placeholder="first_name" </label>
+  <label>Last_name : <input type="text" name="last_name" placeholder="last_name"</label>
+  <label>Email : <input type="email" name="email" placeholder="email"</label>
+  <label>Subjects : <label>
+      <select class="" name="subjectsId">
+        <% subjects.forEach(subject=> { %>
+           <option value='<%=subject.id%>'><%= subject.subject_name%></option>
+        <%})%>
+      </select>
+  <input type="submit" value="SUBMIT">
+</form>
+</table>
+</body>
+<%-include partials/footer.ejs%>
+</html>

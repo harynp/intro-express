@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<%-include partials/head.ejs%>
+
+<body>
+  <h1>Halaman Edit Teachers</h1>
+  </td>
+  </tr>
+    </tbody>
+    </table>
+
+<table border = '2px'>
+<form action="/teachers/edit/<%=data.id%>" method="POST">
+  <label>First_name : <input type="text" name="first_name" placeholder="first_name" value = "<%= data.first_name%>"></label>
+  <label>Last_name : <input type="text" name="last_name" placeholder="last_name" value = "<%= data.last_name%>"></label>
+  <label>Email : <input type="email" name="email" placeholder="email" value = "<%= data.email%>"></label>
+
+  <select class="" name="subjectsId">
+    <% subject.forEach(subjects=> { %>
+      <% var selected = 'selected'
+      if (subjects.id === data.subjectsId){%>
+       <option <%= selected %> value='<%=subjects.id%>'><%= subjects.subject_name%></option>
+      <% } %>
+    <%})%>
+  </select>
+
+   <input type="submit" value="SUBMIT">
+</form>
+</table>
+</body>
+  <%-include partials/footer.ejs%>
+</html>

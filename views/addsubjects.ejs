@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+  <%-include partials/head.ejs%>
+
+<body>
+  <h1>Add Subject to Students</h1>
+<table border = '2px'>
+<form action="/students/add/<%= data.subjectsId%>" method="POST">
+  <label>First_name : <input type="text" name="first_name" placeholder="first_name" value="<%= data.first_name%>"</label><br />
+  <label>Last_name : <input type="text" name="last_name" placeholder="last_name" value="<%= data.last_name%>"</label><br />
+  <label>Email : <input type="email" name="email" placeholder="email" value="<%= data.email%>"</label><br />
+  <label>Choose Subjects : <label><br />
+      <select class="" name="subjectsId">
+           <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+  <input type="submit" value="SUBMIT">
+</form>
+</table>
+</body>
+<%-include partials/footer.ejs%>
+</html>
